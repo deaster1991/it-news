@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ block.super }} :: {{ category.title }}{% endblock %}
+
+{% block content %}
+{% for i in news %}
+    {% if i.is_published %}
+    <div class="card mt-2 mb-3">
+    <img src="/media/{{i.photo}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title"><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h5>
+        <p class="card-text"><small class="text-muted">{{ i.created_at }}</small></p>
+        <p class="card-text">{{ i.content|linebreaks|truncatewords:20 }}</p>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
+
+
+
+
+

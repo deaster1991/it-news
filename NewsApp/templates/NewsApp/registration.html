@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ block.super }} :: Головна
+{% endblock %}
+
+
+{% block content %}
+<h1>Реєстрація</h1>
+<div class="card mt-2 mb-3">
+    <div class="card-body mb-5 mt-5">
+
+
+
+        <form method="post">
+            {% csrf_token %}
+
+
+            <!--    <div class="form-group">-->
+            <!--        <label for="{{ form.title.id_for_label }}">Логін:</label>-->
+            <!--        {{ form.id_username.errors }}-->
+            <!--        {{ form.id_username }}-->
+            <!--    </div>-->
+
+            <!--    <div class="form-group">-->
+            <!--        <label for="{{ form.content.id_for_label }}">Пошта:</label>-->
+            <!--        {{ form.content.errors }}-->
+            <!--        {{ form.content }}-->
+            <!--    </div>-->
+
+            <!--    <div class="form-group">-->
+            <!--        <label for="{{ form.category.id_for_label }}">Пароль:</label>-->
+            <!--        {{ form.category.errors }}-->
+            <!--        {{ form.category }}-->
+            <!--    </div>-->
+            <!--    <div class="form-group">-->
+            <!--        <label for="{{ form.category.id_for_label }}">Повторить Пароль:</label>-->
+            <!--        {{ form.category.errors }}-->
+            <!--        {{ form.category }}-->
+            <!--    </div>-->
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary btn-block">Зареєструватись</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

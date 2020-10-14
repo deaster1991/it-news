@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ block.super }} :: {{ news_item.title }}
+{% endblock %}
+
+
+{% block content %}
+<div class="card mt-2 mb-3">
+    <img src="/media/{{news_item.photo}}" class="card-img-top" alt="...">
+    <div class="card-body mb-5 mt-5">
+        <h5 class="card-title">{{ news_item.title }}</h5>
+        <p class="card-text"><small class="text-muted">{{ news_item.created_at }}</small></p>
+        <p class="card-text">{{ news_item.content|linebreaks }}</p>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+

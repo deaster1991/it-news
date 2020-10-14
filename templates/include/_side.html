@@ -1,0 +1,18 @@
+{% load tags %}
+
+
+
+<div class="list-group col-2 position-fixed">
+    {% get_cat as categories %}
+    {% for i in categories %}
+    <a href="{% url 'category' i.pk %}" class="list-group-item list-group-item-action">
+        <span class="badge badge-light badge-pill">{{ i.cnt }}</span> {{ i.title }}
+    </a>
+    {% endfor %}
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+{%comment%}
+{% show_categories %}
+{%endcomment%}

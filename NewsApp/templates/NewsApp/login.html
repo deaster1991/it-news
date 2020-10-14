@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'include/_side.html' %}
+{% endblock %}
+
+{% block content %}
+
+<h1>Авторизація</h1>
+<div class="card mt-2 mb-3">
+    <div class="card-body mb-5 mt-5">
+
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary btn-block">Вхід</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
